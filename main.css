@@ -38,8 +38,8 @@ header > h2 {
 
 #left-pane > h2,
 #right-pane > h2 {
-/* Modern Georgia-based serif stack */
-font-family: Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
+    /* Modern Georgia-based serif stack */
+    font-family: Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
 }
 
 #left-pane {
@@ -52,4 +52,38 @@ font-family: Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, 
     float: right;
 
     border-right: 1rem solid #f0f0f0;
+}
+
+input[type="text"] {
+    border-color: #ddd;
+    border-radius: 0.25em;
+    border-style: solid;
+    border-width: 1px;
+    font-size: 1.25rem;
+    margin: 5px 1px 3px 0px;
+    padding: .55rem;
+    width: 95%;
+    background-color: #ececec;
+}
+
+label {
+    font-weight: 500;
+}
+
+button[type="submit"] {
+    border-color: #888;
+    border-radius: 0.25em;
+    border-style: solid;
+    border-width: 1px;
+    display: inline-block;
+    /* Modern Georgia-based serif stack */
+    font-family: Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
+    font-weight: 800;
+    font-size: 1.25rem;
+    margin-bottom: 0.5em;
+    padding: .55em;
+    text-decoration: none;
+
+    color: #fff;
+    background-color: #434343;
 }

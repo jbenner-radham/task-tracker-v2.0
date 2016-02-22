@@ -28,13 +28,60 @@
 
       <div id="left-pane">
         <h2>Create a Task</h2>
-        ...
+
+        <form>
+          <p>
+            <label>
+              Task Name<br>
+              <input type="text">
+            </label>
+          </p>
+
+          <p>
+            <label>
+              Date<br>
+              <input type="text">
+            </label>
+          </p>
+
+          <p>
+            <label>
+              Assigned To<br>
+              <input type="text">
+            </label>
+          </p>
+
+          <br>
+
+          <button type="submit">Submit</button>
+        </form>
       </div>
 
       <div id="right-pane">
         <h2>Existing Tasks</h2>
-        ...
+        <table>
+        </table>
       </div>
     </div> <!-- #container -->
+
+    <script>
+      (function () {
+          'use strict'
+
+          var data = JSON.parse(document.getElementById('data').textContent)
+          var table = document.querySelector('table')
+
+          data.forEach(function (task) {
+              var row = table.insertRow()
+
+              for (var prop in task) {
+                  var val = task[prop]
+                  var child = document.createTextNode(val)
+
+                  row.insertCell().appendChild(child)
+              }
+          });
+      })()
+    </script>
   </body>
 </html>
