@@ -13,6 +13,18 @@
         }
     }
 
+    function prependTask(task) {
+        var table = document.querySelector('table')
+        var row   = table.insertRow(0)
+
+        for (var prop in task) {
+            var val = task[prop]
+            var child = document.createTextNode(val)
+
+            row.insertCell().appendChild(child)
+        }
+    }
+
     var json = document.getElementById('data').textContent
     var data = JSON.parse(json)
 
@@ -29,6 +41,6 @@
 
         console.log(task)
 
-        addTask(task)
+        prependTask(task)
     })
 })()
