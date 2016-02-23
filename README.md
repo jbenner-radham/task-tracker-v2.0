@@ -1,4 +1,4 @@
-Test Tracker v2.0
+Task Tracker v2.0
 =================
 > A programming exercise to recreate the described SPA.
 
