@@ -6,7 +6,7 @@
         var row   = table.insertRow()
 
         for (var prop in task) {
-            var val = task[prop]
+            var val   = task[prop]
             var child = document.createTextNode(val)
 
             row.insertCell().appendChild(child)
@@ -28,9 +28,7 @@
     var json = document.getElementById('data').textContent
     var data = JSON.parse(json)
 
-    data.forEach(function (task) {
-        addTask(task)
-    })
+    data.forEach(addTask)
 
     document.querySelector('button').addEventListener('click', function () {
         var task = {
