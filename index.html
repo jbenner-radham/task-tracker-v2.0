@@ -40,7 +40,7 @@
           <p>
             <label>
               Date<br>
-              <input type="text">
+              <input type="date">
             </label>
           </p>
 
@@ -53,7 +53,7 @@
 
           <br>
 
-          <button type="submit">Submit</button>
+          <button type="button">Submit</button>
         </form>
       </div>
 
@@ -64,24 +64,6 @@
       </div>
     </div> <!-- #container -->
 
-    <script>
-      (function () {
-          'use strict'
-
-          var data = JSON.parse(document.getElementById('data').textContent)
-          var table = document.querySelector('table')
-
-          data.forEach(function (task) {
-              var row = table.insertRow()
-
-              for (var prop in task) {
-                  var val = task[prop]
-                  var child = document.createTextNode(val)
-
-                  row.insertCell().appendChild(child)
-              }
-          });
-      })()
-    </script>
+    <script src="app.js"></script>
   </body>
 </html>

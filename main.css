@@ -91,6 +91,7 @@ td:nth-child(odd) {
     border-right: 1rem solid #f0f0f0;
 }
 
+input[type="date"],
 input[type="text"] {
     border-color: #ddd;
     border-radius: 0.25em;
@@ -107,7 +108,7 @@ label {
     font-weight: 500;
 }
 
-button[type="submit"] {
+button {
     border-color: #888;
     border-radius: 0.25em;
     border-style: solid;
