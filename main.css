@@ -1,7 +1,22 @@
-body {
+html,
+body,
+col,
+div,
+header,
+table,
+tr,
+th,
+td
+{
     margin: 0;
     padding: 0;
-    height: 100%;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+
+body {
+    min-height: auto;
     width: 100%;
     color: #1b1b1b;
     background-color: #f0f0f0;
@@ -28,12 +43,36 @@ header > h2 {
     color: #888;
 }
 
+table {
+    padding: 1rem;
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border-color: #ddd;
+    border-style: solid;
+    border-width: .4rem;
+}
+
+td {
+    padding: .75rem;
+}
+
+tr:nth-child(even) {
+    background-color: #ddd;
+}
+
+td:nth-child(odd) {
+    font-weight: 800;
+}
+
 #left-pane,
 #right-pane {
     padding: 1.25rem;
     padding-top: 1.5rem;
     background-color: #fff;
     width: 45.75%;
+    min-height: 550px;
+    position: relative;
 }
 
 #left-pane > h2,
@@ -44,13 +83,11 @@ header > h2 {
 
 #left-pane {
     float: left;
-
     border-left: 1rem solid #f0f0f0;
 }
 
 #right-pane {
     float: right;
-
     border-right: 1rem solid #f0f0f0;
 }
 
@@ -83,7 +120,6 @@ button[type="submit"] {
     margin-bottom: 0.5em;
     padding: .55em;
     text-decoration: none;
-
     color: #fff;
     background-color: #434343;
 }
