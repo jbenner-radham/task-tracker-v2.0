@@ -18,7 +18,7 @@
         var row   = table.insertRow(0)
 
         for (var prop in task) {
-            var val = task[prop]
+            var val   = task[prop]
             var child = document.createTextNode(val)
 
             row.insertCell().appendChild(child)
@@ -30,16 +30,14 @@
 
     data.forEach(function (task) {
         addTask(task)
-    });
+    })
 
-    document.querySelector('form').addEventListener('click', function () {
+    document.querySelector('button').addEventListener('click', function () {
         var task = {
-            name:     this[0].value,
-            date:     this[1].value,
-            assigned: this[2].value
+            name:     this.form.elements[0].value,
+            date:     this.form.elements[1].value,
+            assigned: this.form.elements[2].value
         }
-
-        console.log(task)
 
         prependTask(task)
     })

@@ -7,7 +7,7 @@ Requirements
 - [x] Should load the data below into the existing data section on page load.
 - [x] Should have the ability to create tasks that will immediately be prepended to the list.
 - [x] Should not require a web server, and should be able to run offline.
-- [ ] Match the design as close as possible.
+- [x] Match the design as close as possible.
 - [x] All data exchanges should be in JSON format.
 - [x] Must be completed using jQuery or vanilla JavaScript
 
