@@ -44,8 +44,8 @@ header > h2 {
 }
 
 table {
-    padding: 1rem;
-    border-collapse: collapse;
+    padding: 0.25rem;
+    border-collapse: separate;
     border-spacing: 0;
     width: 100%;
     border-color: #ddd;
