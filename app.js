@@ -39,7 +39,15 @@
         }
 
         // Validate the form input.
-        if (!task.name || !task.date || !task.assigned || !task.date.match(dateRegEx) ) {
+        if (!task.name || !task.date || !task.assigned) {
+            alert('All form fields must be populated.')
+
+            return false
+        }
+
+        if (task.date.match(dateRegEx) === null) {
+            alert('The "Date" must be in `mm/dd/yyyy` format.')
+
             return false
         }
 
@@ -47,7 +55,6 @@
 
         // Clear the form values after creating the task.
         for (var element of this.form.elements) {
-            console.log(element)
             element.value = ''
         }
     })
