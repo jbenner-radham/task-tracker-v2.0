@@ -5,8 +5,8 @@
         var table = document.querySelector('table')
         var row   = table.insertRow()
 
-        for (var prop in task) {
-            var val   = task[prop]
+        for (var property in task) {
+            var val   = task[property]
             var child = document.createTextNode(val)
 
             row.insertCell().appendChild(child)
@@ -17,8 +17,8 @@
         var table = document.querySelector('table')
         var row   = table.insertRow(0)
 
-        for (var prop in task) {
-            var val   = task[prop]
+        for (var property in task) {
+            var val   = task[property]
             var child = document.createTextNode(val)
 
             row.insertCell().appendChild(child)
@@ -31,8 +31,9 @@
     data.forEach(addTask)
 
     document.querySelector('button').addEventListener('click', function () {
-        var dateRegEx = /[0-9]{1,2}\/[0-9]{1,2}\/[0-9]{4}/
-        var task      = {
+        var dateRegEx       = /[0-9]{1,2}\/[0-9]{1,2}\/[0-9]{4}/
+        var chromeDateRegEx = /[0-9]{4}-[0-9]{1,2}-[0-9]{1,2}/
+        var task            = {
             name:     this.form.elements[0].value,
             date:     this.form.elements[1].value,
             assigned: this.form.elements[2].value
@@ -45,7 +46,7 @@
             return false
         }
 
-        if (task.date.match(dateRegEx) === null) {
+        if (task.date.match(dateRegEx) === null && task.date.match(chromeDateRegEx) === null) {
             alert('The "Date" must be in `mm/dd/yyyy` format.')
 
             return false
@@ -54,8 +55,8 @@
         prependTask(task)
 
         // Clear the form values after creating the task.
-        for (var element of this.form.elements) {
-            element.value = ''
+        for (var i in [0, 1, 2]) {
+            this.form.elements[i].value = ''
         }
     })
 })()
