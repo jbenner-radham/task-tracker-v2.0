@@ -13,6 +13,23 @@
         }
     }
 
+    function clearFormValues(form) {
+        for (var i in [0, 1, 2]) {
+            form.elements[i].value = ''
+        }
+    }
+
+    function isFullyPopulatedTask(task) {
+        return (task.name && task.date && task.assigned)
+    }
+
+    function isValidDate(date) {
+        var dateRegEx       = /[0-9]{1,2}\/[0-9]{1,2}\/[0-9]{4}/
+        var chromeDateRegEx = /[0-9]{4}-[0-9]{1,2}-[0-9]{1,2}/
+
+        return (date.match(dateRegEx) !== null || date.match(chromeDateRegEx) !== null)
+    }
+
     function mapFormElements(form) {
         return {
             name:     form.elements[0].value,
@@ -39,28 +56,21 @@
     data.forEach(appendTask)
 
     document.querySelector('button').addEventListener('click', function () {
-        var dateRegEx       = /[0-9]{1,2}\/[0-9]{1,2}\/[0-9]{4}/
-        var chromeDateRegEx = /[0-9]{4}-[0-9]{1,2}-[0-9]{1,2}/
-        var task            = mapFormElements(this.form)
+        var task = mapFormElements(this.form)
 
-        // Validate the form input.
-        if (!task.name || !task.date || !task.assigned) {
+        if (!isFullyPopulatedTask(task)) {
             alert('All form fields must be populated.')
 
             return false
         }
 
-        if (task.date.match(dateRegEx) === null && task.date.match(chromeDateRegEx) === null) {
+        if (!isValidDate(task.date)) {
             alert('The "Date" must be in `mm/dd/yyyy` format.')
 
             return false
         }
 
         prependTask(task)
-
-        // Clear the form values after creating the task.
-        for (var i in [0, 1, 2]) {
-            this.form.elements[i].value = ''
-        }
+        clearFormValues(this.form)
     })
 })()
