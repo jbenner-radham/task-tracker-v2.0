@@ -1,7 +1,7 @@
 (function () {
     'use strict'
 
-    function addTask(task) {
+    function appendTask(task) {
         var table = document.querySelector('table')
         var row   = table.insertRow()
 
@@ -10,6 +10,14 @@
             var child = document.createTextNode(val)
 
             row.insertCell().appendChild(child)
+        }
+    }
+
+    function mapFormElements(form) {
+        return {
+            name:     form.elements[0].value,
+            date:     form.elements[1].value,
+            assigned: form.elements[2].value
         }
     }
 
@@ -28,16 +36,12 @@
     var json = document.getElementById('data').textContent
     var data = JSON.parse(json)
 
-    data.forEach(addTask)
+    data.forEach(appendTask)
 
     document.querySelector('button').addEventListener('click', function () {
         var dateRegEx       = /[0-9]{1,2}\/[0-9]{1,2}\/[0-9]{4}/
         var chromeDateRegEx = /[0-9]{4}-[0-9]{1,2}-[0-9]{1,2}/
-        var task            = {
-            name:     this.form.elements[0].value,
-            date:     this.form.elements[1].value,
-            assigned: this.form.elements[2].value
-        }
+        var task            = mapFormElements(this.form)
 
         // Validate the form input.
         if (!task.name || !task.date || !task.assigned) {
