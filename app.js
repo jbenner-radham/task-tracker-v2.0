@@ -50,9 +50,7 @@
         }
     }
 
-    var json = document.getElementById('data').textContent
-    var data = JSON.parse(json)
-
+    // Defined in `data.js`.
     data.forEach(appendTask)
 
     document.querySelector('button').addEventListener('click', function () {
