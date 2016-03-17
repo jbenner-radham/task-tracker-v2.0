@@ -2,6 +2,7 @@
     "asi": true,
     "browser": true,
     "couch": true,
+    "devel": true,
     "mocha": true,
     "node": true,
     "esnext": true,
